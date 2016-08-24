@@ -1,6 +1,6 @@
 # Details Details Details
 
-This is a utility belt for little tools I'd like to have at hand.
+## This is a utility belt for little tools I'd like to have at hand.
 
 * Simple Ledger
 * Time Tracker
@@ -12,5 +12,7 @@ This is a utility belt for little tools I'd like to have at hand.
 * Daily Journal
 * Birthday Tracker
 
-Heroku Addons: SendGrid 
-
+## Special Thanks:
+* Micheal Hartl's User Authentication
+* Blackrock Digital Start Bootstrap Templates, https://startbootstrap.com/template-overviews/small-business/
+* Heroku, Addons: SendGrid 
