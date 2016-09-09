@@ -1,0 +1,23 @@
+<%= form_for(@transaction) do |f| %>
+  <%= render 'shared/error_messages', object: @transaction %>
+
+  <%= f.label :transaction_id %>
+  <%= f.number_field :transaction_id, class: 'form-control' %>
+  
+  <%= f.label :user %>
+  <%= f.number_field :user, class: 'form-control' %>
+
+  <%= f.label :transaction_date %>
+  <%= f.datetime_field :transaction_date, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control' %>
+
+  <%= f.label :amount %>
+  <%= f.number_field :amount, class: 'form-control' %>
+  
+  <%= f.label :running_balance %>
+  <%= f.number_field :running_balance, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

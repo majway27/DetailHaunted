@@ -1,0 +1,27 @@
+<% provide(:title, 'All Transactions') %>
+
+<h2 class="center under">All Transactions</h2>
+
+<div class="center buffer-bottom">
+  <%= link_to 'New Transaction', new_transaction_path, class: "btn-primary" %>
+  <%= link_to 'Back', root_path, class: "btn-primary" %>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Running Balance</th>
+    </tr>
+  </thead>
+  <% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= link_to transaction.transaction_id, transaction_path(transaction) %></td>
+    <td><%= transaction.description %></td>
+    <td><%= transaction.amount %></td>
+    <td><%= transaction.running_balance %></td>
+  </tr>
+<% end %>
+</table>
