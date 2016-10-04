@@ -1,0 +1,11 @@
+<% provide(:title, 'Edit Entry') %>
+
+<h2 class="center under">Edit Journal Entry</h2>
+
+<div class="center buffer-bottom">
+  <%= link_to 'Back', journals_path, class: "btn-primary" %>
+  <%= link_to 'Show', @journal, class: "btn-primary" %>
+  <%= link_to "Remove", journal_path(@journal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-primary" %>
+</div>
+
+<%= render 'form', journal: @journal %>

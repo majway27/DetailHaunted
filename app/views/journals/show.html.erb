@@ -1,0 +1,20 @@
+<% provide(:title, 'Show Entry') %>
+
+<h2 class="center under">Journal Entry</h2>
+
+<div class="center buffer-bottom">
+  <%= link_to 'Back', journals_path, class: "btn-primary" %>
+  <%= link_to "Edit", edit_journal_path(@journal), class: "btn-primary" %>
+  <%= link_to "Remove", journal_path(@journal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-primary" %>
+</div>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @journal.summary %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @journal.entry %>
+</p>
+

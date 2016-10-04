@@ -1,0 +1,9 @@
+<% provide(:title, 'New Entry') %>
+
+<h2 class="center under">New Journal Entry</h2>
+
+<div class="center buffer-bottom">
+  <%= link_to 'Back', journals_path, class: "btn-primary" %>
+</div>
+
+<%= render 'form', journal: @journal %>

@@ -1,8 +1,6 @@
 class TransactionsController < ApplicationController
   
   before_action :logged_in_user, only: [:index, :new, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update, :destroy]
-  #before_action :admin_user,     only: :destroy
   
   def index
     @transactions = LedgerTransaction.where(:user_id => current_user.id)
@@ -46,11 +44,12 @@ class TransactionsController < ApplicationController
   
   def edit
     @transaction = LedgerTransaction.find(params[:id])
+    redirect_to transactions_url unless @transaction.user_id == current_user.id
   end
   
   def update
     @transaction = LedgerTransaction.find(params[:id])
-    if @transaction.update_attributes(transaction_params)
+    if @transaction.update_attributes(transaction_params) && @transaction.user_id == current_user.id
       flash[:success] = "Entry updated"
       redirect_to transaction_url
     else
