@@ -1,6 +1,6 @@
 <% provide(:title, 'Show Entry') %>
 
-<h2 class="center under">Journal Entry</h2>
+<h2 class="center under">Journal Entry, <%= @journal.created_at %></h2>
 
 <div class="center buffer-bottom">
   <%= link_to 'Back', journals_path, class: "btn-primary" %>

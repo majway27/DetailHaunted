@@ -6,7 +6,7 @@ class JournalsController < ApplicationController
   # GET /journals.json
   def index
     #@journals = Journal.all
-    @journals = Journal.where(:user_id => current_user.id)
+    @journals = Journal.where(:user_id => current_user.id).order("created_at DESC")
   end
 
   # GET /journals/1
